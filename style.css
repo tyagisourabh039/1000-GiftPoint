@@ -1,0 +1,179 @@
+#game-zone{
+    width:260px;
+    height:500px;
+    border: 2px solid;
+    overflow: hidden;
+}
+.box{
+    display: flex;
+    position:absolute;
+    /* top:100px; */
+}
+.gun-gift{
+    position:fixed;
+    /* left:10px; */
+    width:120px;
+    height:50px;
+    background-color: yellow;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.player-gift{
+    position:fixed;
+    /* left:150px; */
+    width:120px;
+    height:50px;
+    background-color: rgb(182,147,248);
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index:-1;
+
+}
+
+.gun-top{
+    width:10px;
+    height:10px;
+    margin-left:10px;
+    background-color: green;
+}
+.gun-foot{
+    width:30px;
+    height:10px;
+    background-color: green;
+}
+.player-gun-container{
+    position:absolute;
+    display:grid;
+    grid-template-columns: 30px 30px 30px;
+    grid-gap: 10px;
+    top:480px;
+    z-index:2;
+}
+.bullet{
+    position: absolute;
+    top:480px;
+    margin-left: 10px;
+    width:10px;
+    height:10px;
+    background-color:rgb(255, 0, 204);
+    z-index:-1;
+    /* animation: fire 2s linear forwards; */
+}
+/* @keyframes fire {
+    0%{
+        top:480px;
+    }
+    100%{
+        top:10px;
+    }
+    
+} */
+.controller{
+    width:260px;
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    margin-top:10px;
+}
+button{
+    width:100px;
+    height:30px;
+}
+
+.new-gun-container{
+    position:absolute;
+    animation: changeGun 1s linear forwards;
+}
+@keyframes changeGun {
+    0%{
+        top:var(--top); 
+        left:var(--left);
+    }
+    30%{
+        top:var(--top30); 
+        left:var(--left30);
+    }
+    99%{
+        top:450px; 
+        opacity: 0;
+        left:var(--left100);
+    }
+    100%{
+        top:480px; 
+        opacity: 0;
+        left:var(--left100);
+        display: 'none';
+    }
+    
+}
+.player-gun-top{
+    width:10px;
+    height:10px;
+    margin-left:10px;
+    background-color: green;
+}
+.player-gun-foot{
+    width:30px;
+    height:10px;
+    background-color: green;
+}
+.player-power{
+    display: inline;
+}
+.player-score{
+    display: inline;
+}
+.player-info{
+    position: absolute;
+    left:280px;
+    font-family: sans-serif;
+    font-weight: 800;
+    font-size: small;
+}
+.power-1{
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    background-color: red;
+    margin-top:5px;
+}
+.power-2{
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    background-color: rgb(0, 255, 60);
+    margin-top:5px;
+}
+.power-3{
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    background-color: rgb(255, 234, 0);
+    margin-top:5px;
+}
+.power-4{
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    background-color: rgb(0, 119, 255);
+    margin-top:5px;
+}
+.power-5{
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    background-color: rgb(255, 0, 204);
+    margin-top:5px;
+}
+.game-over{
+    font-family: sans-serif;
+    font-size:40px;
+    font-weight: bold;
+    position: absolute;
+    margin-left:20px;
+    margin-top:200px;
+    display: none;
+}
